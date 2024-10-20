@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:servicenest/AccountType.dart';
 
-class Homepage extends StatefulWidget {
+class Welcomepage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _ManageState();
   }
 }
 
-class _ManageState extends State<Homepage> {
+class _ManageState extends State<Welcomepage> {
   double? _deviceWidth;
   double? _deviceHeight;
   @override
@@ -16,7 +16,9 @@ class _ManageState extends State<Homepage> {
     _deviceWidth = MediaQuery.of(context).size.width;
     _deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text("Welcome",
             style: TextStyle(fontWeight: FontWeight.w500)),
         leading: const Icon(Icons.home),

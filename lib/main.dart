@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:servicenest/AccountType.dart';
-import 'package:servicenest/Homepage.dart';
+import 'package:servicenest/WelcomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       title: "Service Nest",
-      home: Homepage(),
+      home: Welcomepage(),
       debugShowCheckedModeBanner: false,
     );
   }
