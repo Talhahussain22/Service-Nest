@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:servicenest/AccountType.dart';
 
 class Welcomepage extends StatefulWidget {
+  const Welcomepage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _ManageState();

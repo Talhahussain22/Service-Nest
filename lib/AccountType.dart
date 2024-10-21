@@ -43,7 +43,7 @@ class _AccounttypeState extends State<Accounttype> {
                   onTap: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Useraccount();
+                      return const Useraccount();
                     }));
                   },
                   child: Container(
@@ -73,7 +73,7 @@ class _AccounttypeState extends State<Accounttype> {
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return Workeraccount();
+                    return const Workeraccount();
                   }));
                 },
                 child: Container(

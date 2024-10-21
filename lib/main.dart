@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:servicenest/AccountType.dart';
 import 'package:servicenest/WelcomePage.dart';
 
 void main() {
