@@ -39,8 +39,8 @@ class _UseraccountState extends State<Useraccount> {
       appBar: AppBar(
         toolbarHeight: 35,
         backgroundColor: Colors.transparent,
-        title: Center(child: Text("User Account")),
-        leading: BackButton(),
+        title: const Center(child: Text("User Account")),
+        leading: const BackButton(),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,

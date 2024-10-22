@@ -14,8 +14,8 @@ class _WorkeraccountState extends State<Workeraccount> {
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Center(child: Text("Worker Account")),
-        leading: BackButton(),
+        title: const Center(child: Text("Worker Account")),
+        leading: const BackButton(),
       ),
     );
   }
