@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:servicenest/Components/SiginButton.dart';
+import 'package:servicenest/Components/Mybutton.dart';
 import 'package:servicenest/Components/TextInput.dart';
+import 'package:servicenest/Components/passwordTextFeild.dart';
+import 'package:servicenest/UserSiguppage.dart';
 
 class Useraccount extends StatefulWidget {
   const Useraccount({super.key});
@@ -12,9 +14,24 @@ class Useraccount extends StatefulWidget {
 class _UseraccountState extends State<Useraccount> {
   final EmailController = TextEditingController();
   final PasswordController = TextEditingController();
+  bool obscure_password = true;
 
   // Sign User In
-  void SignUserIn() {}
+  void SignUserIn() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        });
+
+    // Authentication Code here
+
+    // When authenticated pop the Circular Progress Indicator
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +51,21 @@ class _UseraccountState extends State<Useraccount> {
               "Not a memeber?",
               style: TextStyle(color: Colors.grey[700]),
             ),
-            SizedBox(
+            const SizedBox(
               width: 4,
             ),
-            Text(
-              "Register now",
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext) {
+                  return Usersiguppage();
+                }));
+              },
+              child: const Text(
+                "Register now",
+                style:
+                    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),
@@ -47,7 +73,6 @@ class _UseraccountState extends State<Useraccount> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 220,
@@ -71,10 +96,9 @@ class _UseraccountState extends State<Useraccount> {
               const SizedBox(
                 height: 10,
               ),
-              Textinput(
-                controller: PasswordController,
+              Passwordtextfeild(
+                PasswordController: PasswordController,
                 hinttext: "Password",
-                obscuretext: true,
               ),
               const SizedBox(
                 height: 10,
@@ -84,9 +108,15 @@ class _UseraccountState extends State<Useraccount> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyle(color: Colors.grey[600]),
+                    GestureDetector(
+                      onTap: () {
+                        // Implement Forgot Password logic
+                      },
+                      child: const Text(
+                        "Forgot Password?",
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
@@ -94,7 +124,8 @@ class _UseraccountState extends State<Useraccount> {
               const SizedBox(
                 height: 25,
               ),
-              Siginbutton(
+              Mybutton(
+                buttonText: "SignIn",
                 onTap: SignUserIn,
               ),
               const SizedBox(
